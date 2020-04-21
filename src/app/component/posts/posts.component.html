@@ -1,0 +1,21 @@
+<div>
+  <div class="post-box" *ngFor="let post of posts" style="cursor: pointer;">
+    <div>
+      <strong>{{post.user}}</strong>
+      <img [src]="post.imageUrl" alt="Image" />
+      <div class="post-detail">
+        <div>
+          <strong>Pixels: {{post.likes}}</strong>
+          <strong>Comments: {{post.comments.length}}</strong>
+        </div>
+        <div>
+          <strong>{{post.user}}</strong>
+          {{post.description | shorten:30}}
+        </div>
+        <div>
+          <p routerLink="/post/{{post.id}}">View Comments</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

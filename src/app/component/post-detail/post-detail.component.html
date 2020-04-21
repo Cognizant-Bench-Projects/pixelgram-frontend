@@ -1,0 +1,7 @@
+<div *ngIf="post.id">
+  <strong>{{post.user}}</strong>
+  <img [src]="post.imageUrl" alt="Image">
+  <p>{{post.content}}</p>
+  <button class="btn btn-primary">+ Comment</button>
+  <app-comments></app-comments>
+</div>

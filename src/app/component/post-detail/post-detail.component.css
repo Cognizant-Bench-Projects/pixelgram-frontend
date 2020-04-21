@@ -1,0 +1,10 @@
+img {
+  width: 100vw;
+  height: 40vh;
+}
+
+p {
+  font-size: 0.85em;
+  color: gray;
+  margin-top: 5px;
+}

@@ -1,0 +1,21 @@
+p {
+  color: lightgray;
+}
+
+strong {
+  font-weight: 600;
+}
+
+img {
+  width: 100vw;
+  height: 40vh;
+}
+
+.post-box {
+  margin-bottom: 25px;
+}
+
+.post-detail {
+  font-size: smaller;
+  padding-left: 10px;
+}
