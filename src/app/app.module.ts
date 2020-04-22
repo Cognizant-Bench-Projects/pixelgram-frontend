@@ -6,10 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostsComponent } from './component/posts/posts.component';
-import { PostDetailComponent } from './component/post-detail/post-detail.component';
-import { CommentsComponent } from './component/comments/comments.component';
 import { HeaderComponent } from './component/header/header.component';
 import { ShortenPipe } from './shared/shorten.pipe';
+import { PostDetailComponent } from './component/posts/post-detail/post-detail.component';
+import { CommentsComponent } from './component/posts/post-detail/comments/comments.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShortenPipe } from './shared/shorten.pipe';
     PostsComponent,
     PostDetailComponent,
     CommentsComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

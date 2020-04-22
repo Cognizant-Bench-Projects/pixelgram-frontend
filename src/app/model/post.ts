@@ -8,4 +8,5 @@ export class Post {
   likes: number;
   date: Date;
   comments: Comment[];
+  numberOfComments: number;
 }

@@ -1,0 +1,15 @@
+<app-loading-spinner *ngIf="isLoading" class=""></app-loading-spinner>
+<div *ngIf="!isLoading && !noPostFound">
+  <div>
+    <strong>{{post.username}}</strong>
+    <small>{{post.date}}</small>
+  </div>
+  <img [src]="post.imageUrl" alt="Image" />
+  <p>{{post.description}}</p>
+  <br />
+  <app-comments></app-comments>
+</div>
+<div *ngIf="!isLoading && noPostFound">
+  <h2>No Post Found!</h2>
+  <button class="btn btn-primary" routerLink="/posts" type="button">Back</button>
+</div>
