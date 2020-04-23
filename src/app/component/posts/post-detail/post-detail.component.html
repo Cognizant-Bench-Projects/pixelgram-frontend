@@ -7,7 +7,7 @@
   <img [src]="post.imageUrl" alt="Image" />
   <p>{{post.description}}</p>
   <br />
-  <app-comments></app-comments>
+  <app-comments [post]="post"></app-comments>
 </div>
 <div *ngIf="!isLoading && noPostFound">
   <h2>No Post Found!</h2>

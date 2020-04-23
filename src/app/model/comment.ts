@@ -2,6 +2,6 @@ export class Comment {
   id: number;
   postId: number;
   content: string;
-  user: string;
+  username: string;
   date: Date;
 }

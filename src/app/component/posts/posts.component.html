@@ -9,8 +9,8 @@
           <strong>Comments: {{post.numberOfComments}}</strong>
         </div>
         <div>
-          <strong>{{post.user}}</strong>
-          {{post.description | shorten:30}}
+          <strong>{{post.username}}</strong>
+          {{post.description | shorten:40}}
         </div>
         <div>
           <p routerLink="/posts/{{post.id}}">View Comments</p>

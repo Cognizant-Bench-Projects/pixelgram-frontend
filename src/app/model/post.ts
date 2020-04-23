@@ -4,7 +4,7 @@ export class Post {
   id: number;
   description: string;
   imageUrl: string;
-  user: string;
+  username: string;
   likes: number;
   date: Date;
   comments: Comment[];

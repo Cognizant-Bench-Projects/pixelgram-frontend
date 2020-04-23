@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Post } from 'src/app/model/post';
+import { Comment } from 'src/app/model/comment';
+import { CommentService } from 'src/app/service/comment.service';
 
 @Component({
   selector: 'app-comments',
@@ -7,12 +10,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  @Input() comments: Comment[] = [];
-  @Input() numberOfComments: number = 0;
+  @Input() post: Post;
+  comments: Comment[] = [];
+  page: number = 0;
 
-  constructor() { }
+  constructor(private commentService: CommentService) { }
 
   ngOnInit() {
+    this.comments = this.post.comments;
+  }
+
+  getMoreComments() {
+    this.page++;
+    this.commentService.getMoreComments(this.post.id, this.page).subscribe(
+      (data: Comment[]) => {
+        this.comments.push(...data);
+      }
+    )
   }
 
 }

@@ -1,4 +1,13 @@
 <div>
   <h4>All Comments</h4>
-  <button class="btn btn-sm btn-outline-secondary" *ngIf="numberOfComments > 5">More</button>
+  <div *ngFor="let comment of comments" class="comment-box">
+    <strong>{{comment.username}}</strong>
+    <small>{{comment.date}}</small>
+    <p>{{comment.content}}</p>
+  </div>
+  <button
+    class="btn btn-sm btn-outline-secondary"
+    *ngIf="post.numberOfComments > 5 && (page + 1) * 5 &lt; post.numberOfComments"
+    (click)="getMoreComments()"
+  >More</button>
 </div>

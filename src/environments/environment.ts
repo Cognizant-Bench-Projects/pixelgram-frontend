@@ -3,12 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 const baseUri = `http://localhost`;
-const port = '8100';
 const name = 'posts';
 
 export const environment = {
   production: false,
-  postUri: `${baseUri}:${port}/${name}/`
+  postUri: `${baseUri}:8100/${name}/`,
+  commentUri: `${baseUri}:8101/${name}/`
 };
 
 /*
