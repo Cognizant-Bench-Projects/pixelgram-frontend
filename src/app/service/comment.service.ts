@@ -14,6 +14,6 @@ export class CommentService {
   constructor(private http: HttpClient) { }
 
   getMoreComments(postId: number, pageNum: number) {
-    return this.http.get<Comment[]>(`${this.url}/${postId}/comments/page/${pageNum}`);
+    return this.http.get<Comment[]>(`${this.url}${postId}/comments/page/${pageNum}`);
   }
 }
