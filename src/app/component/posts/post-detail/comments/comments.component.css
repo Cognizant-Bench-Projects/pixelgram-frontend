@@ -1,0 +1,36 @@
+small {
+  color: rgb(150, 150, 150);
+  margin-top: 5px;
+}
+
+h4 {
+  margin-left: 2%;
+}
+
+.comment-space {
+  height: 3vh;
+  background-color: whitesmoke;
+  margin: 0;
+}
+
+.comment-area {
+  background-color: whitesmoke;
+}
+
+.comments, .no-comment {
+  background-color: white;
+}
+
+.no-comment {
+  padding-top: 5vh;
+}
+
+.comment-box {
+  padding: 2%;
+  padding-bottom: 1%;
+}
+
+.comment-box-space {
+  height: 8px;
+  background-color: whitesmoke;
+}

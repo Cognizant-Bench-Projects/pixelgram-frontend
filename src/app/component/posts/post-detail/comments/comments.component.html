@@ -1,13 +1,21 @@
-<div>
+<div class="comment-area">
   <h4>All Comments</h4>
-  <div *ngFor="let comment of comments" class="comment-box">
-    <strong>{{comment.username}}</strong>
-    <small>{{comment.date}}</small>
-    <p>{{comment.content}}</p>
+  <div *ngIf="comments.length" class="comments">
+    <div *ngFor="let comment of comments; let i = index">
+      <div class="comment-box">
+        <strong>{{comment.username}}</strong>
+        <small class="float-right">{{comment.date}}</small>
+        <p>{{comment.content}}</p>
+      </div>
+      <div *ngIf="i != post.numberOfComments - 1" class="comment-box-space"></div>
+    </div>
+    <button
+      class="btn btn-sm btn-light btn-block"
+      *ngIf="post.numberOfComments > 5 && (page + 1) * 5 &lt; post.numberOfComments"
+      (click)="getMoreComments()"
+    >More</button>
   </div>
-  <button
-    class="btn btn-sm btn-outline-secondary"
-    *ngIf="post.numberOfComments > 5 && (page + 1) * 5 &lt; post.numberOfComments"
-    (click)="getMoreComments()"
-  >More</button>
+  <div *ngIf="!comments.length">
+    <p class="text text-center no-comment">No Comment Available</p>
+  </div>
 </div>

@@ -1,16 +1,20 @@
-<div>
+<div class="loading-spinner" *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div *ngIf="!isLoading" class="posts-area">
   <div class="post-box" *ngFor="let post of posts" style="cursor: pointer;">
     <div>
+      <img src="assets/avatar.png" class="avatar">
       <strong>{{post.username}}</strong>
-      <img [src]="post.imageUrl" alt="Image" />
+      <small class="float-right">{{post.date}}</small>
+      <img [src]="post.imageUrl" alt="Image" class="img-responsive">
       <div class="post-detail">
-        <div>
-          <strong>Pixels: {{post.likes}}</strong>
-          <strong>Comments: {{post.numberOfComments}}</strong>
-        </div>
-        <div>
-          <strong>{{post.username}}</strong>
-          {{post.description | shorten:40}}
+        <img src="assets/pixelgram.png" class="icon">
+        <strong>Pixels: {{post.likes}}</strong>
+        <img src="assets/comment.png" class="icon">
+        <strong>Comments: {{post.numberOfComments}}</strong>
+        <div class="description">
+           {{post.description | shorten:50}}
         </div>
         <div>
           <p routerLink="/posts/{{post.id}}">View Comments</p>
@@ -18,4 +22,5 @@
       </div>
     </div>
   </div>
+  <div id="page-bottom"></div>
 </div>

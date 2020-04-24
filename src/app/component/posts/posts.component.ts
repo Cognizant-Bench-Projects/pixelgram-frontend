@@ -10,13 +10,16 @@ import { Post } from 'src/app/model/post';
 export class PostsComponent implements OnInit {
 
   posts: Post[] = [];
+  isLoading: boolean = false;
 
   constructor(private postService: PostService) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.postService.getPosts().subscribe(
       (data: Post[]) => {
         this.posts = data;
+        this.isLoading = false;
       }
     )
   }

@@ -1,11 +1,15 @@
-<app-loading-spinner *ngIf="isLoading" class=""></app-loading-spinner>
-<div *ngIf="!isLoading && !noPostFound">
-  <div>
+<div class="loading-spinner" *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div *ngIf="!isLoading && !noPostFound" class="post-area">
+  <div class="page-top"></div>
+  <div class="post-detail">
+    <img src="assets/avatar.png" class="avatar">
     <strong>{{post.username}}</strong>
-    <small>{{post.date}}</small>
+    <small class="float-right">{{post.date}}</small>
+    <img [src]="post.imageUrl" alt="Image" class="img-responsive">
+    <p class="description">{{post.description}}</p>
   </div>
-  <img [src]="post.imageUrl" alt="Image" />
-  <p>{{post.description}}</p>
   <br />
   <app-comments [post]="post"></app-comments>
 </div>
