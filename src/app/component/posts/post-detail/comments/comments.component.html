@@ -3,7 +3,7 @@
   <div *ngIf="comments.length" class="comments">
     <div *ngFor="let comment of comments; let i = index">
       <div class="comment-box">
-        <strong>{{comment.username}}</strong>
+        <strong>{{comment.user.username}}</strong>
         <small class="float-right">{{comment.date}}</small>
         <p>{{comment.content}}</p>
       </div>

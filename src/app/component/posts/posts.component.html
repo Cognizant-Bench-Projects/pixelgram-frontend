@@ -5,7 +5,7 @@
   <div class="post-box" *ngFor="let post of posts" style="cursor: pointer;">
     <div>
       <img src="assets/avatar.png" class="avatar">
-      <strong>{{post.username}}</strong>
+      <strong>{{post.user.username}}</strong>
       <small class="float-right">{{post.date}}</small>
       <img [src]="post.imageUrl" alt="Image" class="img-responsive">
       <div class="post-detail">

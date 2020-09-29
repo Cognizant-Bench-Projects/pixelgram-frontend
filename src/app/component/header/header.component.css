@@ -7,3 +7,21 @@ nav {
   position: fixed;
   width: 100vw;
 }
+
+button:hover {
+  background-color: whitesmoke;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+p {
+  color: #0000ff;
+  font-size: smaller;
+  margin-right: 39%;
+}
+
+#signup-btn{
+  margin-right: 37%;
+}

@@ -3,4 +3,46 @@
     <img src="assets/pixelgram.png" class="d-inline-block align-top">
     PixelGram
   </a>
+  <button class="btn btn-sm border border-darken-2" *ngIf="!isLogin" (click)="openModal(loginModal)">Login</button>
+  <button class="btn btn-sm border border-darken-2" *ngIf="isLogin">Home</button>
+  <button class="btn btn-sm border border-darken-2" *ngIf="isLogin" (click)="logout()">Log Out</button>
 </nav>
+
+<ng-template #loginModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Login</h4>
+  </div>
+  <div class="modal-body">
+    <form #loginForm="ngForm">
+      <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="email" autocomplete="off" required minlength="3">
+      <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="password" autocomplete="off" required>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <p (click)="openModal(signupModal)">No account? Sign Up</p>
+    <!-- <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Cancel</button> -->
+    <button id="login-btn" type="button" class="btn btn-outline-primary" (click)="login()" [disabled]="loginForm.form.invalid">Login</button>
+  </div>
+</ng-template>
+
+<ng-template #signupModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Sign Up</h4>
+  </div>
+  <div class="modal-body">
+    <form #signupForm="ngForm">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" placeholder="Username (3 - 8 Characters)" name="username" [(ngModel)]="username" autocomplete="off" required minlength="3">
+      <!-- <small *ngIf="username.invalid && (username.dirty || username.touched)">Invalid Username</small> -->
+      <label for="Email">Email</label>
+      <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="email" autocomplete="off" required>
+      <label for="password">Password</label>
+      <input type="password" class="form-control" placeholder="Password (8 - 16 Characters)" name="password" [(ngModel)]="password" autocomplete="off" required minlength="8">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" placeholder="Re-enter Your Password" name="confirmPassword" [(ngModel)]="confirmPassword" autocomplete="off" required>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button id="signup-btn" type="button" class="btn btn-outline-primary" (click)="login()" [disabled]="signupForm.form.invalid">Sign Up</button>
+  </div>
+</ng-template>

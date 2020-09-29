@@ -9,7 +9,8 @@ const name = 'posts';
 export const environment = {
   production: false,
   postUri: `${baseUri}:${port}/post-service/${name}/`,
-  commentUri: `${baseUri}:${port}/comment-service/${name}/`
+  commentUri: `${baseUri}:${port}/comment-service/${name}/`,
+  userUri: `${baseUri}:${port}/user-service/`
 };
 
 /*
